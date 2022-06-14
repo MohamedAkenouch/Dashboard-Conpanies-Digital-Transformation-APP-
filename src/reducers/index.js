@@ -1,11 +1,14 @@
 import { combineReducers } from 'redux';
 
-import Experts from './Experts';
-import Models from './Models';
-import auth from './auth';
-import blogs from './blogs';
-import users from './users';
-import exploitables from './exploitables';
+import ObjectivesStrategic from './ObjectivesStrategic';
+import QuestionsAuditStrategic from './QuestionsAuditStrategic';
+import AxesCulture from './AxesCulture';
+import QuestionsAuditCulture from './QuestionsAuditCulture';
+import AxesDigital from './AxesDigital';
+import LevelsDigital from './LevelsDigital';
+import ChoicesDigital from './ChoicesDigital';
+import Initiative from './Initiative';
+import InitiativesCulture from './InitiativesCulture';
+import Users from './users'
 
-
-export const reducers = combineReducers({ Experts, Models, auth,blogs,users,exploitables });
+export const reducers = combineReducers({ QuestionsAuditStrategic,ObjectivesStrategic,AxesCulture,QuestionsAuditCulture,AxesDigital,LevelsDigital,ChoicesDigital , Initiative, Users,InitiativesCulture });

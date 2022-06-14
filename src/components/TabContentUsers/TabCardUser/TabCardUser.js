@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
 import styles from './TabCardUser.module.css';
 
-import { getUsers, deleteUser } from '../../../actions/auth';
+import { deleteUser } from '../../../actions/Users';
 
 import { useDispatch } from "react-redux";
 
 
-function TabCardUser({id, name, email, selectedFile}) {
+function TabCardUser({id,  email, name}) {
 
     const dispatch = useDispatch();
     const deleteU = () => {
@@ -16,20 +16,15 @@ function TabCardUser({id, name, email, selectedFile}) {
     return (
         <div className={styles.TabCardUser}>
             <div className='row text-center'>
-                <div className='col-sm-2'>
-                    <img src={selectedFile} className={styles.userProfile}/>
-                </div>
-                <div className='col-sm-2'>
+                <div className='col-sm-3'>
                     <pre>{id}</pre>
                 </div>
                 <div className='col-sm-2'>
                     <pre>{name}</pre>
                 </div>
-                <div className='col-sm-2'>
+                
+                <div className='col-sm-3'>
                     <pre>{email}</pre>
-                </div>
-                <div className='col-sm-2'>
-                    <pre>20/03/2021</pre>
                 </div>
                 <div className='col-sm-2'>
                     <button onDoubleClick={ () => deleteU()} className={styles.deleteUser}>Delete</button>

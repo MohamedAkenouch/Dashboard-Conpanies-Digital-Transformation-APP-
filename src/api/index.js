@@ -1,37 +1,75 @@
 import axios from 'axios';
 
-const url_experts = 'http://localhost:5000/experts';
-const url_models = 'http://localhost:5000/models';
-const API = axios.create({baseURL : 'http://localhost:5000'});
-const url_blogs = 'http://localhost:5000/blogs';
-const url_sendMail = 'http://localhost:5000/send-mail';
-const url_user = 'http://localhost:5000/user';
-const url_exploitables = 'http://localhost:5000/exploitables';
+const url_questionsAuditStrategic = 'http://localhost:5000/questionsAuditStrategic';
+const url_objectivesStrategic = 'http://localhost:5000/objectivesStrategic';
+const url_axesCulture = 'http://localhost:5000/axesCulture';
+const url_questionsAuditCulture = 'http://localhost:5000/questionsAuditCulture';
+const url_axesDigital = 'http://localhost:5000/axesDigital';
+const url_levelsDigital = 'http://localhost:5000/levelsDigital';
+const url_choicesDigital = 'http://localhost:5000/choicesDigital';
+const url_Initiative = 'http://localhost:5000/initiative';
+const url_InitiativesCulture = 'http://localhost:5000/initiativesCulture';
+const url_users = 'http://localhost:5000/users'
 
-export const fetchBlogs = () => axios.get(url_blogs);
-export const createBlog = (newBlog) => axios.post(url_blogs, newBlog);
-export const deleteBlog = (id) => axios.delete(`${url_blogs}/${id}`);
 
-export const sendMail = (newMail) => axios.post(url_sendMail, newMail);
 
-export const fetchExperts = () => axios.get(url_experts);
-export const fetchExpert = (id) => axios.get(`${url_experts}/${id}`);
-export const createExpert = (newExpert) => axios.post(url_experts, newExpert);
-export const updateExpert = (id, updatedExpert) => axios.patch(`${url_experts}/${id}`, updatedExpert);
-export const deleteExpert = (id) => axios.delete(`${url_experts}/${id}`);
 
-export const fetchModels = () => axios.get(url_models);
-export const fetchModel = (id) => axios.get(`${url_models}/${id}`);
-export const createModel = (newModel) => axios.post(url_models, newModel);
-export const updateModel = (id, updatedModel) => axios.patch(`${url_models}/${id}`, updatedModel);
-export const deleteModel = (id) => axios.delete(`${url_models}/${id}`);
 
-export const signIn = (formData) => API.post('/user/signin' , formData);
-export const signUp = (formData) => API.post('/user/signup' , formData);
-export const createUser = (newUser) => axios.post(url_user, newUser);
-export const fetchUsers = () => axios.get(url_user);
-export const deleteUser = (id) => axios.delete(`${url_user}/${id}`);
 
-export const fetchExploitables = () => axios.get(url_exploitables);
-export const createExploitable = (newExploitable) => axios.post(url_exploitables, newExploitable);
-export const deleteExploitable = (id) => axios.delete(`${url_exploitables}/${id}`);
+
+export const fetchQuestionsAuditStrategic = () => axios.get(url_questionsAuditStrategic);
+export const fetchQuestionAuditStrategic = (id) => axios.get(`${url_questionsAuditStrategic}/${id}`);
+export const createQuestionAuditStrategic = (newquestionsAuditStrategic) => axios.post(url_questionsAuditStrategic, newquestionsAuditStrategic);
+export const updateQuestionAuditStrategic = (id, updatedquestionsAuditStrategic) => axios.patch(`${url_questionsAuditStrategic}/${id}`, updatedquestionsAuditStrategic);
+export const deleteQuestionAuditStrategic = (id) => axios.delete(`${url_questionsAuditStrategic}/${id}`);
+
+export const fetchObjectivesStrategic = () => axios.get(url_objectivesStrategic);
+export const fetchObjectiveStrategic = (id) => axios.get(`${url_objectivesStrategic}/${id}`);
+export const createObjectiveStrategic = (newobjectivesStrategic) => axios.post(url_objectivesStrategic, newobjectivesStrategic);
+export const updateObjectiveStrategic = (id, updatedobjectivesStrategic) => axios.patch(`${url_objectivesStrategic}/${id}`, updatedobjectivesStrategic);
+export const deleteObjectiveStrategic = (id) => axios.delete(`${url_objectivesStrategic}/${id}`);
+
+export const fetchAxesCulture = () => axios.get(url_axesCulture);
+export const fetchAxeCulture = (id) => axios.get(`${url_axesCulture}/${id}`);
+export const createAxeCulture = (newaxesCulture) => axios.post(url_axesCulture, newaxesCulture);
+export const updateAxeCulture = (id, updatedaxesCulture) => axios.patch(`${url_axesCulture}/${id}`, updatedaxesCulture);
+export const deleteAxeCulture = (id) => axios.delete(`${url_axesCulture}/${id}`);
+
+export const fetchQuestionsAuditCulture = () => axios.get(url_questionsAuditCulture);
+export const fetchQuestionAuditCulture = (id) => axios.get(`${url_questionsAuditCulture}/${id}`);
+export const createQuestionAuditCulture = (newquestionsAuditCulture) => axios.post(url_questionsAuditCulture, newquestionsAuditCulture);
+export const updateQuestionAuditCulture = (id, updatedquestionsAuditCulture) => axios.patch(`${url_questionsAuditCulture}/${id}`, updatedquestionsAuditCulture);
+export const deleteQuestionAuditCulture = (id) => axios.delete(`${url_questionsAuditCulture}/${id}`);
+
+export const fetchAxesDigital = () => axios.get(url_axesDigital);
+export const fetchAxeDigital = (id) => axios.get(`${url_axesDigital}/${id}`);
+export const createAxeDigital = (newaxesDigital) => axios.post(url_axesDigital, newaxesDigital);
+export const updateAxeDigital = (id, updatedaxesDigital) => axios.patch(`${url_axesDigital}/${id}`, updatedaxesDigital);
+export const deleteAxeDigital = (id) => axios.delete(`${url_axesDigital}/${id}`);
+
+export const fetchLevelsDigital = () => axios.get(url_levelsDigital);
+export const fetchLevelDigital = (id) => axios.get(`${url_levelsDigital}/${id}`);
+export const createLevelDigital = (newlevelsDigital) => axios.post(url_levelsDigital, newlevelsDigital);
+export const updateLevelDigital = (id, updatedlevelsDigital) => axios.patch(`${url_levelsDigital}/${id}`, updatedlevelsDigital);
+export const deleteLevelDigital = (id) => axios.delete(`${url_levelsDigital}/${id}`);
+
+export const fetchChoicesDigital = () => axios.get(url_choicesDigital);
+export const fetchChoiceDigital = (id) => axios.get(`${url_choicesDigital}/${id}`);
+export const createChoiceDigital = (newchoicesDigital) => axios.post(url_choicesDigital, newchoicesDigital);
+export const updateChoiceDigital = (id, updatedchoicesDigital) => axios.patch(`${url_choicesDigital}/${id}`, updatedchoicesDigital);
+export const deleteChoiceDigital = (id) => axios.delete(`${url_choicesDigital}/${id}`);
+
+export const fetchInitiatives = () => axios.get(url_Initiative);
+export const fetchInitiative = (id) => axios.get(`${url_Initiative}/${id}`);
+export const createInitiative = (newinitiative) => axios.post(url_Initiative, newinitiative);
+export const updateInitiative = (id, updateinitiative) => axios.patch(`${url_Initiative}/${id}`, updateinitiative);
+export const deleteInitiative = (id) => axios.delete(`${url_Initiative}/${id}`);
+
+export const fetchInitiativesCulture = () => axios.get(url_InitiativesCulture);
+export const fetchInitiativeCulture = (id) => axios.get(`${url_InitiativesCulture}/${id}`);
+export const createInitiativeCulture = (newinitiative) => axios.post(url_InitiativesCulture, newinitiative);
+export const updateInitiativeCulture = (id, updateinitiative) => axios.patch(`${url_InitiativesCulture}/${id}`, updateinitiative);
+export const deleteInitiativeCulture = (id) => axios.delete(`${url_InitiativesCulture}/${id}`);
+
+export const fetchUsers = () => axios.get(url_users);
+export const deleteUser = (id) => axios.delete(`${url_users}/${id}`);

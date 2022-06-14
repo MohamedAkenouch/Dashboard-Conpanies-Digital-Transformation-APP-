@@ -3,7 +3,7 @@ import styles from './TabContentUsers.module.css';
 import './TabContentUsers.css';
 import TabCardUser from './TabCardUser/TabCardUser';
 
-import { getUsers } from '../../actions/auth';
+import { getUsers } from '../../actions/Users';
 
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
@@ -15,16 +15,10 @@ function TabContentUsers() {
         dispatch(getUsers());
     }, [dispatch]);
 
-    const users = useSelector((state) => state.users);
-    console.log(users);
+    const users = useSelector((state) => state.Users);
 
-    const user = {id: "afg14567ggs", name: "youness aabaoui", email: "ahmed@gmail.com", selectedFile: "ertyusbsbb"}
-    const usersList = [
-        user,
-        user,
-        user,
-        user,
-    ];
+
+
 
     return (
     <div className={styles.TabContent}>
@@ -38,21 +32,17 @@ function TabContentUsers() {
             <div className="tab-pane active" id="allUsers" role="tabpanel" aria-labelledby="home-tab">
             <div className={styles.TabContentCard}>
                 <div className='row text-center'>
-                    <div className='col-sm-2'>
-                        Profile
-                    </div>
-                    <div className='col-sm-2'>
+                    <div className='col-sm-3'>
                         ID
                     </div>
                     <div className='col-sm-2'>
-                        Name
+                       Name
                     </div>
-                    <div className='col-sm-2'>
+
+                    <div className='col-sm-3'>
                         Email
                     </div>
-                    <div className='col-sm-2'>
-                        Created At
-                    </div>
+
                     <div className='col-sm-2'>
                     </div>
                 </div>
@@ -63,8 +53,8 @@ function TabContentUsers() {
                             <TabCardUser 
                                 id={user._id} 
                                 name={user.name}
+
                                 email={user.email} 
-                                selectedFile={""}
                             />
                         </>
                     ) )
