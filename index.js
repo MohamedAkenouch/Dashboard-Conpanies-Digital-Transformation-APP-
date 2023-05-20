@@ -3,43 +3,38 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-// import fileUpload from 'express-fileupload';
 
 
-import expertRoutes from './routes/experts.js';
-import exploitableRoutes from './routes/exploitables.js';
-import modelRoutes from './routes/models.js';
-import usersRoutes from "./routes/user.js";
-import blogsRoutes from './routes/blogs.js';
-import sendMail from './routes/sendMail.js';
-import buildmodel from './routes/buildmodel.js';
-import downloadmodell from './routes/downloadmodel.js';
-import downloadexmpl from './routes/downloadexmpl.js';
-import usemodel from './routes/usemodel.js';
-import predict from  './routes/predict.js';
-import upload from './routes/upload.js';
+import questionsAuditStrategicRoutes from './routes/questionsAuditStrategic.js';
+import objectivesStrategicRoutes from './routes/objectivesStrategic.js';
+import questionsAuditCultureRoutes from './routes/questionsAuditCulture.js';
+import axesCultureRoutes from './routes/axesCulture.js';
+import axesDigitalRoutes from './routes/axesDigital.js';
+import levelsDigitalRoutes from './routes/levelsDigital.js';
+import choicesDigitalRoutes from './routes/choicesDigital.js';
+import initiativeRoutes from './routes/initiative.js';
+import initiativesCultureRoutes from './routes/initiativesCulture.js';
+import userRoutes from './routes/user.js'
 
 const app = express();
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
-// app.use(fileUpload());
-app.use('/experts', expertRoutes);
-app.use('/exploitables', exploitableRoutes);
-app.use('/models', modelRoutes);
-app.use('/user', usersRoutes);
-app.use('/blogs', blogsRoutes);
-app.use('', sendMail);
-app.use('/' , buildmodel);
-app.use('/' , downloadexmpl);
-app.use('/' , usemodel);
-app.use('/' , predict);
-app.use('/' , downloadmodell);
-app.use('/' , upload);
+app.use('/questionsAuditStrategic', questionsAuditStrategicRoutes);
+app.use('/objectivesStrategic', objectivesStrategicRoutes);
+app.use('/questionsAuditCulture', questionsAuditCultureRoutes);
+app.use('/axesCulture', axesCultureRoutes);
+app.use('/axesDigital', axesDigitalRoutes);
+app.use('/levelsDigital', levelsDigitalRoutes);
+app.use('/choicesDigital', choicesDigitalRoutes);
+app.use('/initiative', initiativeRoutes);
+app.use('/initiativesCulture', initiativesCultureRoutes);
+app.use('/users', userRoutes);
 
 
-const CONNECTION_URL = 'mongodb://akenouch:24861379@cluster0-shard-00-00.p0wac.mongodb.net:27017,cluster0-shard-00-01.p0wac.mongodb.net:27017,cluster0-shard-00-02.p0wac.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-dq29kg-shard-0&authSource=admin&retryWrites=true&w=majority';
+
+const CONNECTION_URL = 'mongodb+srv://abdelghxni:abdelghxni@cluster0.pu0up.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT|| 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
